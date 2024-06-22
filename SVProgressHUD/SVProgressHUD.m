@@ -757,7 +757,6 @@ static const CGFloat SVProgressHUDLabelSpacing = 8.0f;
                 
                 // Set progress animated
                 [CATransaction begin];
-                [CATransaction setDisableActions:YES];
                 strongSelf.ringView.strokeEnd = progress;
                 [CATransaction commit];
                 
@@ -873,7 +872,7 @@ static const CGFloat SVProgressHUDLabelSpacing = 8.0f;
                                                           userInfo:[self notificationUserInfo]];
         
         // Zoom HUD a little to to make a nice appear / pop up animation
-        self.hudView.transform = self.hudView.transform = CGAffineTransformScale(self.hudView.transform, 1.3f, 1.3f);
+        self.hudView.transform = self.hudView.transform = CGAffineTransformScale(self.hudView.transform, 0.8f, 0.8f);
         
         __block void (^animationsBlock)(void) = ^{
             // Zoom HUD a little to make a nice appear / pop up animation
